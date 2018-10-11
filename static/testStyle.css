@@ -1,0 +1,145 @@
+body {
+    background-color: lightblue;
+	font-family: Helvetica;
+	font-size: 12px
+}
+
+h1 {
+    text-align: center;
+    letter-spacing: 1.5px;
+    background-color: #f1f1f1;
+    padding: 40px;
+}
+
+h2 {
+	font-size: 20px;
+	letter-spacing: 1.5px;
+	margin: auto;
+	width: 90%;
+	padding-top: 10px;
+	padding-bottom: 2px;
+	border-bottom: 1px solid black;
+}
+
+label {
+	font-size: 10px;
+}
+
+input[type=text], input[type=password] {
+    padding: 12px;
+    margin: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+
+table {
+	margin: auto;
+	width: 50%;
+	padding: 3em;
+	border: 2px solid darkgray;
+	text-align: left;
+}
+
+textarea {
+	padding: 5px;
+	height: 50px;
+	width: 300px;
+	resize: none;
+}
+
+input[type=submit] {
+    background-color: darkgray;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 30%;
+}
+
+input[type=submit]:hover {
+	opacity: 0.8;
+}
+
+#deleteButton {
+	background-color: #e12929;
+}
+
+#submitButton {
+	background-color: #229a26;
+}
+
+ul {
+    list-style-type: none;
+    /*width: 25%;
+    margin: auto;*/
+    padding: 0;
+    overflow: hidden;
+    background-color: gray;
+}
+
+li a {
+    display: block;
+    letter-spacing: 1	px;
+    color: white;
+    text-align: center;
+    padding: 10px 16px;	
+    text-decoration: none;
+}
+
+li {
+    float: left;
+}
+
+li a:hover {
+    background-color: #111;
+    color: white;
+}
+
+li a.active {
+    background-color: darkgray;
+    color: white;
+}
+
+.container {
+    text-align: center;
+    padding: 25px;
+    margin: auto;
+    width: 50%;
+    background-color: #f1f1f1;
+    border: 3px solid #f1f1f1;
+    border-radius: 5px;
+}
+
+#messages {
+    text-align: left;
+    padding: 25px;
+    margin: auto;
+    width: 50%;
+    background-color: #f1f1f1;
+    border: 3px solid #f1f1f1;
+    border-radius: 5px;
+}
+
+#message {
+    text-align: left;
+    padding: 25px;
+    border-spacing: 50px;
+    background-color: white;
+    border-radius: 2px;
+}
+
+.about {
+	color: slategray;
+	font-style: italic;
+}
+
+.messages {
+	margin: auto;
+	width: 50%;
+	padding: 3em;
+	background: #cae6f6;
+	border: 1px solid lightgray;
+}

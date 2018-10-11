@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<!-- Using an external CSS -->
+	<head>
+	  <link rel = stylesheet href="{{ url_for('static', filename='testStyle.css') }}">
+	</head>
+	<body>
+		<h1>Flask App</h1>
+		<nav>
+			<ul>
+				{% if g.user %}
+				<li><a>Welcome, {{ aUser }}!</a></li>
+				{% else %}
+				<li><a>Welcome!</a></li>
+				{% endif %}
+				<li><a href="/">Home</a></li>
+				<li><a href="/create">Create Message</a></li>
+				{% if not g.user %}
+				<li><a href="/login">Sign In</a></li>
+				<li><a href="/register">Sign Up</a></li>
+				{% endif %}
+				{% if g.user %}<li><a href="/logout">Logout</a></li>{% endif %}
+			</ul>
+		</nav>
+		<div class = "container">
+			<h2>Update Message</h2><br>
+			<!-- Sending form using "POST" method -->
+			<form action="{{ url_for('update', id=message[0]) }}" method="post">
+				<!-- the "or" just auto-fills the textarea with the current message -->
+		    	<textarea name = "message" rows="5" cols="50" maxlength="140" placeholder="140 character limit" value="{{ request.form['message'] }}" required>{{ request.form['message'] or message[2] }}</textarea><br>
+		    	<input type="submit" id="submitButton" value="Submit">
+		  	</form>
+
+			<form action="{{ url_for('delete', id=message[0]) }}" method="post">
+    			<input class="danger" type="submit" id="deleteButton" value="Delete Message" onclick="return confirm('Are you sure?');">
+  			</form>
+
+		</div>
+	</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<!-- Using an external CSS -->
+	<head>
+	  <link rel="stylesheet" href="static/testStyle.css">
+	</head>
+	<body>
+		<h1>Flask App</h1>
+		<nav>
+			<ul>
+				{% if g.user %}
+				<li><a>Welcome, {{ aUser }}!</a></li>
+				{% else %}
+				<li><a>Welcome!</a></li>
+				{% endif %}
+				<li><a href="/">Home</a></li>
+				<li><a href="/create">Create Message</a></li>
+				<li><a href="/login">Sign In</a></li>
+				<li><a class="active" href="/register">Sign Up</a></li>
+			</ul>
+		</nav>
+		  	<div class = "container">
+				<form action="/register" form method="post">
+					<h2>Sign Up</h2><br>
+					<input type="text" name = "username" placeholder="Username" id="username" value="{{ request.form['username'] }}" required><br>
+					<input type="password" name = "password" placeholder="Password" id="password" value="{{ request.form['password'] }}" required><br>
+					<input type="submit" value="Sign Up">
+				</form>
+			</div>
+	</body>
+</html>

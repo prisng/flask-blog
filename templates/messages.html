@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<!-- Using an external CSS -->
+	<head>
+	  <link rel="stylesheet" href="static/testStyle.css">
+	</head>
+	<body>
+		<h1>Flask App</h1>
+		<nav>
+			<ul>
+				{% if g.user %}
+				<li><a>Welcome, {{ aUser }}!</a></li>
+				{% else %}
+				<li><a>Welcome!</a></li>
+				{% endif %}
+				<li><a href="/">Home</a></li>
+				<li><a href="/create">Create Message</a></li>
+				{% if not g.user %}
+				<li><a href="/login">Sign In</a></li>
+				<li><a href="/register">Sign Up</a></li>
+				{% endif %}
+				{% if g.user %}<li><a href="/logout">Logout</a></li>{% endif %}
+			</ul>
+		</nav>
+		  	<div id = "messages">
+				<h2>Messages</h2><br>
+	    		{% for message in theMessages %}
+	    			<div id = "message">
+	    				<div class= "about" >{{ message[4] }} on {{ message[2].strftime('%Y-%m-%d') }}:</div>
+	    				<p>{{ message[3] }}</p>
+						{% if g.user == message[4] %}
+          					<a class="action" href="{{ url_for('update', id=message[0]) }}">Edit</a>
+        				{% endif %}
+	    			</div>
+	    			<br>
+	    		{% endfor %}
+			</div>
+	</body>
+</html>
